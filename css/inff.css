@@ -1,0 +1,114 @@
+*{
+    font-family: 'Bell MT', sans-serif;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+  
+h1 {
+    color: #171717;
+}
+  
+nav {
+    padding: 10px;
+}
+  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+  
+li {
+    display: inline-block;
+    margin: 0 10px;
+}
+  
+a {
+    text-decoration: none;
+    color: #171717;
+    font-weight: bold;
+}
+  
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    text-align: center;
+    color: #171717;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.stories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.story {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.story h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.story p{
+    text-align: justify;
+}
+
+#back-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#back-to-top-btn i {
+    margin-top: 10px;
+}
+
+#back-to-top-btn:hover {
+    opacity: 0.8;
+}  
