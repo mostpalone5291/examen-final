@@ -15,7 +15,7 @@ let linkTag = searchWrapper.querySelector("a");
 let webLink;
 
 // Evento para autocompletar y buscar en Google
-inputBox.addEventListener('input', () => {
+inputBox.addEventListener('input', () => {    //Se añade un evento "input" al cuadro de búsqueda para detectar cambios en el texto ingresado por el usuario.
     let userData = inputBox.value;
     let emptyArray = [];
     if (userData) {
@@ -25,25 +25,13 @@ inputBox.addEventListener('input', () => {
         linkTag.click();
     }
 
-    Object.values(suggestions).forEach(category => {
+    Object.values(suggestions).forEach(category => {    //Cuando se detecta un cambio en el cuadro de búsqueda, se obtiene el texto ingresado por el usuario y se realiza una búsqueda de palabras clave relacionadas en el objeto "suggestions".
         category.forEach(data => {
           if (data.toLowerCase().startsWith(userData.toLowerCase())) {
             emptyArray.push(data);
           }
         });
     });
-    
-    /*for (let category in suggestions) {
-        emptyArray = emptyArray.concat(
-          suggestions[category].filter(data =>
-            data.toLowerCase().startsWith(userData.toLowerCase())
-          )
-        );
-    }*/
-
-    /*emptyArray = suggestions.filter((data) => {
-        return data.toLowerCase().startsWith(userData.toLowerCase());
-    });*/
   
     emptyArray = emptyArray.map((data) => {
         return `<li>${data}</li>`;
@@ -52,7 +40,7 @@ inputBox.addEventListener('input', () => {
     searchWrapper.classList.add("active");
     showSuggestions(emptyArray);
 
-    let allList = suggBox.querySelectorAll("li");
+    let allList = suggBox.querySelectorAll("li");   //Se generan sugerencias basadas en las palabras clave coincidentes y se muestran en la caja de sugerencias.
     allList.forEach(item => {
       item.addEventListener("click", () => {
         select(item);
@@ -61,20 +49,10 @@ inputBox.addEventListener('input', () => {
   } else {
     searchWrapper.classList.remove("active");
   }
-  
-    /*let allList = suggBox.querySelectorAll("li");
-    for (let i = 0; i < allList.length; i++) {
-        allList[i].addEventListener("click", () => {
-            select(allList[i]);
-        });
-      }
-    } else {
-        searchWrapper.classList.remove("active");
-    }*/
 });
   
 // Función para seleccionar una sugerencia y realizar la búsqueda
-function select(element) {
+function select(element) {    //Cuando el usuario selecciona una sugerencia, se actualiza el texto en el cuadro de búsqueda y se realiza una búsqueda en Google con la palabra clave seleccionada.
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = () => {

@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"><!--Nos ayuda para agregar los iconos-->
         <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="/scss/custom.css">
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/interaccion.css">
         <title>Inicio</title>
     </head>
     <body>
@@ -21,12 +21,23 @@
                   <a class="nav-link text-white active" href="../index.html">Inicio</a>
                   <a class="nav-link text-white" href="/html/dioses.html">Dioses</a>
                   <a class="nav-link text-white" href="/html/info.html">Información del Clima</a>
-                  <a class="nav-link text-white" href="#"></a>
+                  <a class="nav-link text-white" href="#">Interacción</a>
                 </div>
               </div>
             </div>
           </nav>
+          <div class="container">
+            <h1>Trivia de Mitología Nórdica</h1><br>
+            <div id="question"></div>
+            <div id="options"></div><br>
+            <div id="result"></div>
+            <div class="container button-container">
+              <button id="submit">Enviar respuesta</button>
+              <button id="restart" style="display: none;">Reiniciar Trivia</button>
+            </div>
+          </div>
 
+          <script src="/js/interaccion.js"></script>
           <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
