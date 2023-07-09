@@ -1,11 +1,11 @@
 const apiKey = 'LCTDyLKgNKpWy7CiocYrj43aaKpeOQ9n';
-const city = 'Luque';
+const city = 'Asuncion';
 
 fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${city}`)
   .then(response => response.json())
   .then(data => {
     const cityKey = data[0].Key;
-    return fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${apiKey}`);
+    return fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${apiKey}&language=es-es`);
   })
   .then(response => response.json())
   .then(data => {
