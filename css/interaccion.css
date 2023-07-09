@@ -5,6 +5,10 @@ html, body {
     padding: 0;
 }
 
+.nav-link{
+    font-weight: 600;
+}
+
 .container {
     max-width: 600px;
     margin: 0 auto;
